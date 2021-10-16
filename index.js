@@ -6,6 +6,8 @@ const { base64encode, base64decode } = require('nodejs-base64');
 
 var ress = true;
 
+var url = "";
+
 app.get('/', function (req, res) {
     request(
         "https://moa.hotmo.org/search?q="+base64decode(req.query.str),
@@ -18,7 +20,7 @@ app.get('/', function (req, res) {
                if (test == '<a data-nopjax href="ht') {
                    const str = text.split('').slice(21, -34).join("");
                    ress = false;
-                   console.log(str);
+                   url = str;
                }
                if (ress == false) {
                    break;
@@ -26,5 +28,11 @@ app.get('/', function (req, res) {
             }
          }
     )
+    res.append('Access-Control-Allow-Origin', '*');
+    res.append('Access-Control-Allow-Credentials', 'true');
+    res.send("true");
+})
+app.get('/check', function (req, res) {
+    res.send(url);
 })
 app.listen(3000)
