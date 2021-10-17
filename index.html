@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width">
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+    function Function() {
+    	fetch("http://127.0.0.1:5000/check").
+            then(resp => {return resp.text()}).then(resBody => {
+            	try {
+            	    document.querySelector("#music").remove();
+            	    document.querySelector("body").innerHTML += '<audio autoplay id="music" src="'+resBody+'" onended="Function()"></audio><br><br>';
+            	}
+            	catch (err) {
+                    document.querySelector("body").innerHTML += '<audio autoplay id="music" src="'+resBody+'" onended="Function()"></audio><br><br>';
+            	}
+        })
+    }
+    Function()
+</script>
+</body>
+</html>
