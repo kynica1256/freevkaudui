@@ -1,13 +1,12 @@
+
 const express = require('express')
 const app = express()
 const request = require('request');  
 const { base64encode, base64decode } = require('nodejs-base64');
 
-app.use(express.static(__dirname + '/use'));
 
 
 var ress = true;
-
 
 const url = {"url":""};
 app.get('/', function (req, res) {
@@ -36,18 +35,13 @@ app.get('/', function (req, res) {
     )
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Credentials', 'true');
-    res.send("{");
+    res.send("");
 })
 app.get('/check', function (req, res) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Credentials', 'true');
     console.log(url["url"]);
     res.send(url["url"]);
 })
 app.get('/music', function (req, res) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Credentials', 'true');
-    res.sendfile('use/index.html');
+    res.sendfile('index.html');
 })
 app.listen(5000)
-
