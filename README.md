@@ -12,3 +12,6 @@ async function subscribe(){
 }
 subscribe()
 </pre>
+
+to listen, you need to go to 
+<pre>http://ip-addres:5000/musiccheck</pre>
