@@ -16,3 +16,12 @@ subscribe()
 to listen, you need to go to 
 <pre>http://ip-addres:5000/musiccheck</pre>
 <h2>Watch in incognito mode</h2>
+<h2>Installation</h2>
+<pre>
+npm install express
+npm install crypto
+npm install fs
+npm install request
+npm install nodejs-base64
+npm install
+</pre>
