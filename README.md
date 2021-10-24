@@ -15,3 +15,4 @@ subscribe()
 
 to listen, you need to go to 
 <pre>http://ip-addres:5000/musiccheck</pre>
+<h2>Watch in incognito mode</h2>
