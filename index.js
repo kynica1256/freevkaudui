@@ -13,7 +13,7 @@ const file = {"file":"","url":""};
 app.get('/', function (req, res) {
     console.log(base64decode(req.query.str))
     request(
-        "https://moa.hotmo.org/search?q="+base64decode(req.query.str),
+        "https://ru.hitmotop.com/search?q="+base64decode(req.query.str),
         (err, response, body) => {
             try {
                 let arr = body.split('\n');
